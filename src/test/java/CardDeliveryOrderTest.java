@@ -17,19 +17,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.text.SimpleDateFormat;
-import java.util.*;
-
-
-import com.codeborne.selenide.WebDriverProvider;
-//import io.github.bonigarcia.wdm.ChromeDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import com.codeborne.selenide.Configuration;
-
-
 
 public class CardDeliveryOrderTest {
 
@@ -56,7 +43,7 @@ public class CardDeliveryOrderTest {
         $$("button[class*=\"button\"]").findBy(text("Запланировать")).click(); // press order button
 
         $("[data-test-id=\"replan-notification\"] [class=\"notification__content\"] [class*=\"button__content\"] [class*=\"button__text\"]").shouldHave(visible, Duration.ofMillis(15000)).click(); //click reorder button
-        $("[data-test-id=\"success-notification\"] [class=\"notification__content\"]").shouldHave(text("Встреча успешно запланирована на " + actualDatePlus), Duration.ofMillis(15000)); // check reregistration
+        $("[data-test-id=\"success-notification\"] [class=\"notification__content\"]").shouldHave(text("Failed test!!!Встреча успешно запланирована на " + actualDatePlus), Duration.ofMillis(15000)); // check reregistration
     }
 
 }
