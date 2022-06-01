@@ -40,14 +40,14 @@ public class CardDeliveryOrderTest {
         $("[data-test-id=\"phone\"] [name=\"phone\"]").setValue(generator.generate("ru").getPhone()); // input phone
         $("[class=\"checkbox__text\"]").click(); //check agreement
         $$("button[class*=\"button\"] ").findBy(text("Запланировать")).click(); // press order button
-//        $("[data-test-id=\"success-notification\"] [class=\"notification__content\"]").shouldHave(text("Встреча успешно запланирована на " + actualDate), Duration.ofMillis(15000)); //check registration
-        $("[data-test-id=\"success-notification\"] [class=\"notification__content\"]").shouldHave(visible, (text("Встреча успешно запланирована на " + actualDate))); //check registration
+                $("[data-test-id=\"success-notification\"] [class=\"notification__content\"]").shouldHave(visible, Duration.ofMillis(35000));
+        $("[data-test-id=\"success-notification\"] [class=\"notification__content\"]").shouldHave(text("Встреча успешно запланирована на " + actualDate), Duration.ofMillis(15000)); //check registration
+
 
         $("[data-test-id=\"date\"] [placeholder=\"Дата встречи\"]").doubleClick().sendKeys(actualDatePlus); // input another actualDate
         $$("button[class*=\"button\"]").findBy(text("Запланировать")).click(); // press order button
 
         $("[data-test-id=\"replan-notification\"] [class=\"notification__content\"] [class*=\"button__content\"] [class*=\"button__text\"]").shouldHave(visible, Duration.ofMillis(15000)).click(); //click reorder button
-//        $("[data-test-id=\"success-notification\"] [class=\"notification__content\"]").getAttribute("style").equals("display: inline;");
 //        $("[data-test-id=\"success-notification\"] [class=\"notification__content\"]").shouldHave(text("Встреча успешно запланирована на " + actualDatePlus), Duration.ofMillis(15000)); // check reregistration
 
 
