@@ -58,14 +58,12 @@ public class DataGenerator {
             int quantity = 1;
             while ((line = csvReader.readLine()) != null) {
                 String[] data = line.split(";");
-                // do something with the data
                 boolean findNumber = line.startsWith(num +";");
                 if (findNumber) {
                     cityName = line.replace(num +";","");
                     quantity++;
                 }
 
-//                }
             }
             csvReader.close();
         }
