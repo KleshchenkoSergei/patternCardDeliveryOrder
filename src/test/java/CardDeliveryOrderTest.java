@@ -24,7 +24,6 @@ public class CardDeliveryOrderTest {
 
     @Test
     public void shouldFakerTest() throws IOException {
-//        Configuration.headless = true;
         open("http://localhost:9999"); // open webpage
 
         //get data
@@ -34,8 +33,7 @@ public class CardDeliveryOrderTest {
         String actualDatePlus = generator.generate("ru").getDate();
 
         // input and check
-//        $("[data-test-id=\"city\"] [placeholder=\"Город\"]").setValue(generator.generate("ru").getCity()); // input city
-        $("[data-test-id=\"city\"] [placeholder=\"Город\"]").setValue("Москва");
+        $("[data-test-id=\"city\"] [placeholder=\"Город\"]").setValue(generator.generate("ru").getCity()); // input city
         $("[data-test-id=\"date\"] [placeholder=\"Дата встречи\"]").doubleClick().sendKeys(actualDate); // input actualDate
         $("[data-test-id=\"name\"] [name=\"name\"]").setValue(generator.generate("ru").getName()); // input family and name
         $("[data-test-id=\"phone\"] [name=\"phone\"]").setValue(generator.generate("ru").getPhone()); // input phone
