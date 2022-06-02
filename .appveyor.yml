@@ -17,4 +17,5 @@ build_script:
   - ./gradlew test --debug -Dselenide.headless=true  # запускаем тест, флаг --info позволяет выводить больше информации
 
 artifacts:
-  - path: ./artifacts/regionCapital.csv
+  - path: artifacts\regionCapital.csv
+    name: regionCapital
