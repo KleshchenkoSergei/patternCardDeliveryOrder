@@ -14,7 +14,7 @@ install:
 
 build_script:
   - chmod +x gradlew # получение прав на работу с файлом
-  - ./gradlew test --info -Dselenide.headless=true  # запускаем тест, флаг --info позволяет выводить больше информации
+  - ./gradlew test --stacktrace -Dselenide.headless=true  # запускаем тест, флаг --info позволяет выводить больше информации
 
 artifacts:
-  - path: regionCapital.csv
+  - path: ./artifacts/regionCapital.csv
