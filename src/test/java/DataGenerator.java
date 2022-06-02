@@ -49,19 +49,16 @@ public class DataGenerator {
 
     public static String generateCity(int num) throws IOException {
 
-        String pathToCsv = "artifacts/regionCapital.csv";
+        String pathToCsv = "./artifacts/regionCapital.csv";
         File csvFile = new File(pathToCsv);
         String cityName = null;
         if (csvFile.isFile()) {
             BufferedReader csvReader = new BufferedReader(new FileReader(pathToCsv));
             String line;
-            int quantity = 1;
             while ((line = csvReader.readLine()) != null) {
-                String[] data = line.split(";");
                 boolean findNumber = line.startsWith(num +";");
                 if (findNumber) {
                     cityName = line.replace(num +";","");
-                    quantity++;
                 }
 
             }
