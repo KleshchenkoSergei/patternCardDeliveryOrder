@@ -49,7 +49,7 @@ public class DataGenerator {
 
     public static String generateCity(int num) throws IOException {
 
-        String pathToCsv = "./artifacts/regionCapitals.csv";
+        String pathToCsv = "./artifacts/regionCapital.csv";
         File csvFile = new File(pathToCsv);
         String cityName = null;
         if (csvFile.isFile()) {
