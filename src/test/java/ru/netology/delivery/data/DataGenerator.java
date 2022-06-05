@@ -36,20 +36,12 @@ public class DataGenerator {
 
         public static String generateDate(int daysToFirstMeeting, int daysToSecondMeeting) {
             Faker faker = new Faker(new Locale("ru"));
-            Date currentDate = new Date();
-            LocalDate currentDate2 = LocalDate.now(); // current date
-            LocalDate firstDate2 = currentDate2.plusDays(daysToFirstMeeting);
-            LocalDate secondDate2 = currentDate2.plusDays(daysToSecondMeeting);
+            LocalDate currentDate = LocalDate.now(); // current date
+            LocalDate firstDate = currentDate.plusDays(daysToFirstMeeting);
+            LocalDate secondDate = currentDate.plusDays(daysToSecondMeeting);
 
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(currentDate);
-            cal.add(Calendar.DATE, daysToFirstMeeting);
-            Date firstDate = cal.getTime();
-            cal.add(Calendar.DATE, daysToSecondMeeting);
-            Date secondDate = cal.getTime();
-
-            LocalDate startDate = firstDate2;
-            LocalDate endDate = secondDate2;
+            LocalDate startDate = firstDate;
+            LocalDate endDate = secondDate;
             Date d1 = convertToDateViaInstant(startDate);
             Date d2 = convertToDateViaInstant(endDate);
 
