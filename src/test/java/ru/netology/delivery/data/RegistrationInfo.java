@@ -1,11 +1,12 @@
+package ru.netology.delivery.data;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 
 @Data
 @AllArgsConstructor
-
-public class RegistrationInfo {
+class RegistrationInfo {
 
     private final String city;
     private final String date;
